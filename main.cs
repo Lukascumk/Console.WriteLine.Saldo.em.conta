@@ -33,5 +33,7 @@ class Program
         {
             Console.WriteLine("Saldo insuficiente: " + contaPJ1.saldo);
         }
+
+        Console.ReadLine();
     }
 }

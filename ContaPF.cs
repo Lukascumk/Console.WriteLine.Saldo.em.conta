@@ -2,7 +2,7 @@ namespace ContasPF
 {
     public class ContaPF
     {
-        public string nome;
+        private string nome;
         private string cpf;
         private float saldo;
 
