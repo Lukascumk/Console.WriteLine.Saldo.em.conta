@@ -2,7 +2,7 @@ namespace ContasPF
 {
     public class ContaPF
     {
-        private string nome;
+        public string nome;
         private string cpf;
         private float saldo;
 
@@ -12,7 +12,6 @@ namespace ContasPF
             this.cpf = cpf;
             this.saldo = saldo;
         }
-
         public string Nome
         {
             get { return nome; }
