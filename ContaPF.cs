@@ -12,6 +12,7 @@ namespace ContasPF
             this.cpf = cpf;
             this.saldo = saldo;
         }
+
         public string Nome
         {
             get { return nome; }
