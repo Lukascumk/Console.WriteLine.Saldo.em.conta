@@ -2,15 +2,34 @@ namespace ContasPJ
 {
     public class ContaPJ
     {
-        public string nome;
-        public string cnpj;
-        public float saldo;
+        private string nomeEmpresa;
+        private string cnpj;
+        private float saldoEmpresa;
 
-        public ContaPJ(string nome, string cnpj, float saldo)
+        public ContaPJ  
+      (string nomeEmpresa, string cnpj, float saldoEmpresa)
         {
-            this.nome = nome;
+            this.nomeEmpresa = nomeEmpresa;
             this.cnpj = cnpj;
-            this.saldo = saldo;
+            this.saldoEmpresa = saldoEmpresa;
         }
+
+              public string NomeEmpresa
+              {
+                  get { return nomeEmpresa; }
+                  set { nomeEmpresa = value; }
+              }
+
+              public string CNPJ
+              {
+                  get { return cnpj; }
+                  set { cnpj = value; }
+              }
+
+              public float SaldoEmpresa
+              {
+                  get { return saldoEmpresa; }
+                  set { saldoEmpresa = value; }
+              }
     }
 }
