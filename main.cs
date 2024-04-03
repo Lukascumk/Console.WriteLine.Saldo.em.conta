@@ -1,11 +1,11 @@
 using System;
 using ContasPF;
 using ContasPJ;
+
 class Program
 {
-    static void Main()
+  static void Main()
 {
-
 Console.WriteLine("Digite Seu Nome: ");
 string nome = Console.ReadLine();
 
@@ -17,7 +17,8 @@ float saldo = 2000.0f;
 ContaPF contaPF2 = new ContaPF(nome, cpf, saldo);
 Console.WriteLine("Saldo total: " + contaPF2.Saldo);
 
-ContaPF contaPF1 = new ContaPF(nome: "João", cpf: "123.456.789-00", saldo: 1000.0f);
+ContaPF contaPF1 = new ContaPF
+  (nome: "João", cpf: "123.456.789-00", saldo: 1000.0f);
 
 Console.WriteLine("Digite o Nome da sua Empresa: ");
   string nomeEmpresa = Console.ReadLine();
@@ -27,8 +28,8 @@ Console.WriteLine("Digite seu CNPJ: ");
   
   float saldoEmpresa = 1000.0f;
 
-  ContaPJ ContaPJ2 = new ContaPJ(nomeEmpresa, cnpj, saldoEmpresa);
-  Console.WriteLine("Saldo total: " + ContaPJ2.SaldoEmpresa);
+      ContaPJ ContaPJ2 = new ContaPJ(nomeEmpresa, cnpj, saldoEmpresa);
+      Console.WriteLine("Saldo total: " + ContaPJ2.SaldoEmpresa);
 
   
       ContasPJ.ContaPJ contaPJ1 = new ContasPJ.ContaPJ

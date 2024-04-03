@@ -5,6 +5,7 @@ namespace ContasPJ
         private string nomeEmpresa;
         private string cnpj;
         private float saldoEmpresa;
+      
       public ContaPJ  
       (string nomeEmpresa, string cnpj, float saldoEmpresa)
         {
