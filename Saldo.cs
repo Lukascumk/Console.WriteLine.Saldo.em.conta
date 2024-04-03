@@ -12,7 +12,7 @@ namespace Transacao
             public string credito;
             public string pix;
 
-            public TransacaoConta(float saldoF, int saldoI, decimal saldoD)
+            public SaldoConta(float saldoF, int saldoI, decimal saldoD)
             {
                 this.saldoF = saldoF;
                 this.saldoI = saldoI;
