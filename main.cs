@@ -1,9 +1,8 @@
 using System;
 using ContasPF;
 using ContasPJ;
-using Transacao; 
 
-partial class Program
+class Program
 {
     static void Main()
     {
@@ -27,21 +26,7 @@ partial class Program
         float saldoEmpresa = 1000.0f;
 
         ContaPJ ContaPJ1 = new ContaPJ(nomeEmpresa, cnpj, saldoEmpresa);
-        Console.WriteLine("Saldo total: " + ContaPJ1.SaldoEmpresa);
-
-        string debito;
-        string credito;
-        string pix;
-
-        Console.WriteLine("Digite o meio de pagamento: ");
-        debito = Console.ReadLine();
-        credito = Console.ReadLine();
-        pix = Console.ReadLine();
-
-        Console.WriteLine("Digite o valor a ser debitado: ");
-        string TransacaoConta = Console.ReadLine();
-
-        SaldoConta transacao = new SaldoConta(float.Parse(TransacaoConta));
+        Console.WriteLine("Saldo total: " + ContaPJ1.SaldoEmpresa);        
 
         if (contaPF1.Saldo <= 0)
         {
@@ -60,6 +45,7 @@ partial class Program
             Console.WriteLine("Saldo insuficiente: " + ContaPJ1.SaldoEmpresa);
         }
 
+      
         Console.ReadLine();
     }
 }
