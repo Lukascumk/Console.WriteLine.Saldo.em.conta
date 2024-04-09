@@ -1,6 +1,5 @@
 namespace Transacao
 {
-
   public class SaldoConta
   {
       public float saldoF;
@@ -25,20 +24,20 @@ namespace Transacao
       {
           this.saldoD = saldoD;
       }
-    
+
       public void mesmoSaldo(float valor)
       {
-          if (saldoF - valor <=0){
+          if (saldoF - valor <= 0)
+          {
               Console.WriteLine("Compra Negada");
           }
           else
-        {
-              TransacaoConta transacaoConta = new TransacaoConta("debito", "credito", "pix");
-              Console.WriteLine("Saldo atual:  {saldo}"+transacaoConta.saldoConta);
+          {
+              TransacaoConta newTransacaoConta = new TransacaoConta("debito", "credito", "pix");
+              Console.WriteLine($"Saldo atual: {valor}"+ newTransacaoConta.saldoConta);
           }
       }
   }
-
 
   public class TransacaoConta
   {
@@ -59,7 +58,7 @@ namespace Transacao
       }
       public void Credito(float valor)
       {
-          saldoConta += valor;
+          saldoConta -= valor;
       }
       public void Pix(float valor)
       {
