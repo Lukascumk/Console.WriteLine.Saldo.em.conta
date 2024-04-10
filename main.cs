@@ -30,42 +30,28 @@ class Program
         Console.WriteLine("Digite a Senha da Empresa: ");
         string senhaEmpresa = Console.ReadLine();
 
-        float saldoEmpresa = 1000.0f;
+        float saldoEmpresa = 0000.0f;
 
         ContaPJ ContaPJ1 = new ContaPJ (nomeEmpresa, cnpj, senhaEmpresa, saldoEmpresa);
 
-        if (!senhaEmpresa.All(char.IsDigit) || senhaEmpresa.Length != 6)
+        //PJ
+        if (!senhaEmpresa.All(char.IsDigit) || senhaEmpresa.Length != 6 || saldoEmpresa <=0 || saldoEmpresa >=0 )
         {
             Console.WriteLine("Senha Incorreta");
         }
-        else
+      else if (senhaEmpresa.All(char.IsDigit) && senhaEmpresa.Length == 6 && saldoEmpresa <=0 && saldoEmpresa >=0)
         {
             Console.WriteLine("Seu Saldo na Sua Conta Pessoa Juridica é : " + ContaPJ1.SaldoEmpresa);
-        }
+        } 
 
-        if (contaPF1.Saldo <= 0)
+        //PF 
+        if (senha.All(char.IsDigit) || senha.Length != 6 || saldo <=0 || saldo >=0)
         {
-            Console.WriteLine("Saldo insuficiente em sua conta Pessoa Física: " + contaPF1.Saldo);
+            Console.WriteLine("Senha Incorreta");
         }
-        else
+        else if (senha.All(char.IsDigit) && senha.Length == 6 && saldo <=0 && saldo >= 0)
         {
-            Console.WriteLine("Saldo da sua conta Pessoa Física é: " + contaPF1.Saldo);
-        }
-
-        if (senhaEmpresa.All(char.IsDigit) && senhaEmpresa.Length == 6)
-        {
-            Console.WriteLine("Saldo de Sua Conta Pessoa Juridíca: " + ContaPJ1.SaldoEmpresa);
-        }
-        else
-        {
-            if (!senhaEmpresa.All(char.IsDigit))
-            {
-                Console.WriteLine("Senha Incorreta! Digite apenas números");
-            }
-            else if (senhaEmpresa.Length != 6)
-            {
-                Console.WriteLine("A Senha deve conter apenas 6 dígitos");
-            }
+            Console.WriteLine("Seu Saldo na Sua Conta Pessoa Fisica é : " + contaPF1.Saldo);
         }
 
         Console.ReadLine();

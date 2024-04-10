@@ -5,8 +5,8 @@ namespace ContasPF
     public class ContaPF
     {
         private string nome;
-        private string senha;
         private string cpf;
+        private string senha;
         private float saldo;
     public ContaPF(string nome, string cpf, string senha, float saldo)
         {
@@ -29,7 +29,8 @@ namespace ContasPF
         public string Senha
         {
             get{return senha;}
-            set{  
+            set
+          {  
                   if (value.Length != 6)
               {
               throw new ArgumentException("A Senha deve conter apenas 6 dígitos");                             }
