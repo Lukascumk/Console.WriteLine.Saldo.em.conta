@@ -1,3 +1,5 @@
+using System;
+using System.Linq;
 namespace ContasPF
 {
     public class ContaPF
@@ -27,13 +29,26 @@ namespace ContasPF
         public string Senha
         {
             get{return senha;}
-            set{senha = value;}
+            set{  
+                  if (value.Length != 6)
+              {
+              throw new ArgumentException("A Senha deve conter apenas 6 dígitos");                             }
+                  if (!ValorNumerico(value))
+              {
+              throw new ArgumentException("A Senha deve conter apenas números");
+              }
+                  senha = value;
+              }  
         }
         public float Saldo
         {
             get { return saldo; }
             set { saldo = value; }
         }
-      
+
+      private bool ValorNumerico(string valor)
+      {
+          return valor.All(char.IsDigit);
+      }
     }
 }

@@ -1,16 +1,19 @@
+using System;
+using System.Linq;
 namespace ContasPJ
 {
     public class ContaPJ
     {
         private string nomeEmpresa;
         private string cnpj;
-        private string senha;
-
-        public ContaPJ(string nomeEmpresa, string cnpj, string senha)
+        private string senhaEmpresa;
+        private float saldoEmpresa;
+        public ContaPJ(string nomeEmpresa, string cnpj, string senhaEmpresa, float saldoEmpresa)
         {
             this.nomeEmpresa = nomeEmpresa;
             this.cnpj = cnpj;
-            this.senha = senha;
+            this.senhaEmpresa = senhaEmpresa;
+            this.saldoEmpresa = saldoEmpresa;
         }
 
         public string NomeEmpresa
@@ -25,9 +28,9 @@ namespace ContasPJ
             set { cnpj = value; }
         }
 
-        public string Senha
+        public string SenhaEmpresa
         {
-            get { return senha; }
+            get { return senhaEmpresa; }
             set
             {
                 if (value.Length != 6)
@@ -38,9 +41,15 @@ namespace ContasPJ
                 {
                     throw new ArgumentException("A Senha deve conter apenas números");
                 }
-                senha = value;
+                senhaEmpresa = value;
             }
         }
+      public float SaldoEmpresa
+                {
+                  get { return saldoEmpresa; }
+                  set { saldoEmpresa = value;}
+        
+                }
 
         private bool ValorNumerico(string valor)
         {
