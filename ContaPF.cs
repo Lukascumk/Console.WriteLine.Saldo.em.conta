@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using ContasPJ;
 namespace ContasPF
 {
     public class ContaPF

@@ -18,8 +18,7 @@ class Program
 
         float saldo = 2000.0f;
 
-        ContaPF contaPF1 = new ContaPF(nome, cpf, senha, saldo);
-        Console.WriteLine("Saldo total: " + contaPF1.Saldo);
+       
 
         Console.WriteLine("Digite o Nome da sua Empresa: ");
         string nomeEmpresa = Console.ReadLine();
@@ -33,25 +32,21 @@ class Program
         float saldoEmpresa = 0000.0f;
 
         ContaPJ ContaPJ1 = new ContaPJ (nomeEmpresa, cnpj, senhaEmpresa, saldoEmpresa);
+        ContaPF contaPF1 = new ContaPF(nome, cpf, senha, saldo);
+      
 
-        //PJ
-        if (!senhaEmpresa.All(char.IsDigit) || senhaEmpresa.Length != 6 || saldoEmpresa <=0 || saldoEmpresa >=0 )
+        
+      if ((!senhaEmpresa.All(char.IsDigit) || senhaEmpresa.Length != 6) ||
+          (!senha.All(char.IsDigit) || senha.Length != 6))
+      {
+          Console.WriteLine("Senha Incorreta");
+        
+        
+      }
+        else
         {
-            Console.WriteLine("Senha Incorreta");
-        }
-      else if (senhaEmpresa.All(char.IsDigit) && senhaEmpresa.Length == 6 && saldoEmpresa <=0 && saldoEmpresa >=0)
-        {
-            Console.WriteLine("Seu Saldo na Sua Conta Pessoa Juridica é : " + ContaPJ1.SaldoEmpresa);
-        } 
-
-        //PF 
-        if (senha.All(char.IsDigit) || senha.Length != 6 || saldo <=0 || saldo >=0)
-        {
-            Console.WriteLine("Senha Incorreta");
-        }
-        else if (senha.All(char.IsDigit) && senha.Length == 6 && saldo <=0 && saldo >= 0)
-        {
-            Console.WriteLine("Seu Saldo na Sua Conta Pessoa Fisica é : " + contaPF1.Saldo);
+            Console.WriteLine("Seu Saldo na Sua Conta Pessoa Jurídica é: " + ContaPJ1.SaldoEmpresa ); 
+          Console.WriteLine("Seu Saldo na Sua Conta Pessoa Física é: " + contaPF1.Saldo);
         }
 
         Console.ReadLine();
