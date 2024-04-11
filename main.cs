@@ -19,7 +19,6 @@ class Program
         float saldo = 2000.0f;
 
        
-
         Console.WriteLine("Digite o Nome da sua Empresa: ");
         string nomeEmpresa = Console.ReadLine();
 

@@ -13,7 +13,7 @@ namespace ContasPJ
         {
             this.nomeEmpresa = nomeEmpresa;
             this.cnpj = cnpj;
-            this.senhaEmpresa = senhaEmpresa;
+            SetSenhaEmpresa (senhaEmpresa);
             this.saldoEmpresa = saldoEmpresa;
         }
       private bool ValorNumerico(string valor)
@@ -32,23 +32,26 @@ namespace ContasPJ
             get { return cnpj; }
             set { cnpj = value; }
         }
-
         public string SenhaEmpresa
         {
             get { return senhaEmpresa; }
-            set
-            {
-                if (value.Length != 6)
-                {
-                    throw new ArgumentException("A Senha deve conter apenas 6 dígitos");
-                }
-                if (!ValorNumerico(value))
-                {
-                    throw new ArgumentException("A Senha deve conter apenas números");
-                }
-                senhaEmpresa = value;
-            }
+            set { senhaEmpresa = value;}
         }
+
+      public void SetSenhaEmpresa (string value)
+      {
+          if (value.Length != 6)
+          {
+              throw new ArgumentException("A Senha deve conter apenas 6 dígitos");
+          }
+          if (!ValorNumerico(value))
+          {
+              throw new ArgumentException("A Senha deve conter apenas números");
+          }
+
+         senhaEmpresa = value;
+      }
+
       public float SaldoEmpresa
                 {
                   get { return saldoEmpresa; }
