@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+
 namespace ContasPJ
 {
     public class ContaPJ
@@ -15,6 +16,10 @@ namespace ContasPJ
             this.senhaEmpresa = senhaEmpresa;
             this.saldoEmpresa = saldoEmpresa;
         }
+      private bool ValorNumerico(string valor)
+      {
+          return valor.All(char.IsDigit);
+      }
 
         public string NomeEmpresa
         {
@@ -50,10 +55,5 @@ namespace ContasPJ
                   set { saldoEmpresa = value;}
         
                 }
-
-        private bool ValorNumerico(string valor)
-        {
-            return valor.All(char.IsDigit);
-        }
     }
 }
